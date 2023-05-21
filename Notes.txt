@@ -1,0 +1,39 @@
+- Command to create a new folder
+    nest new projectName
+
+---------------------------------------------Files
+-.prettierrc = Give format to the code consistently
+-nest-cli = Allow us to override or add some configuration specific to the project
+-tsconfig.build = Basically, this is for prod mode, due to here we can override some rules and
+    it could reduce the bundle size
+---------------------------------------------Nest Modules
+Each app has at leat one module (root or main module). It is the starting point of the app
+Modules are effective if they are organized by components, also, it is good to have a folder per module
+They are singletong (this is a pattern), which means that a module could be imported by others
+
+Module = It is a class with the decorator @Module, this decorator provides meta-data that is used by
+    Nest to organized the app structure
+    @Module = Provide
+        -Providers: Array of providers to be available within the module via dependency injection
+        -Controllers: Array of controllers instantiated
+        -Exports: Array of providers to export modules
+        -Imports: List of modules required by the current module
+
+----------------------Creating a module or controller
+-nest [g] [module/controller] [name] [--no-spec]
+    -g = generate
+    -option = Could be replace by another option, see more option typing nest g --help
+        -module, it will generate a new folder an update app.module
+        -controller, it will 
+    -name = name of the option, for this case, it is the module name
+    -no-spec = it means that spec files won't be created
+
+---------------------------------------------Nest Controllers
+Responsible for handling inconming requests and returning responses to the client
+Bound to a specific path
+Containg handlers, which handle endpoints and reques methods (get, post, put delete)
+Can take advantage of dependency injection to consume providers with same module
+
+Controller = It has methods inside it, which each of it has decorator such as @GET, @POST...
+
+----------------------Creating a controller
