@@ -9,7 +9,7 @@
 ---------------------------------------------Nest Modules
 Each app has at leat one module (root or main module). It is the starting point of the app
 Modules are effective if they are organized by components, also, it is good to have a folder per module
-They are singletong (this is a pattern), which means that a module could be imported by others
+They are singleton (this is a pattern), which means that a module could be imported by others
 
 Module = It is a class with the decorator @Module, this decorator provides meta-data that is used by
     Nest to organized the app structure
@@ -20,11 +20,12 @@ Module = It is a class with the decorator @Module, this decorator provides meta-
         -Imports: List of modules required by the current module
 
 ----------------------Creating a module or controller
--nest [g] [module/controller] [name] [--no-spec]
+-nest [g] [module/controller/service] [name] [--no-spec]
     -g = generate
     -option = Could be replace by another option, see more option typing nest g --help
-        -module, it will generate a new folder an update app.module
-        -controller, it will 
+        -module, it will generate a new folder (case it does not exist) an update app.module
+        -controller, Ne controller file and update module file
+        -service, New service file and update module file
     -name = name of the option, for this case, it is the module name
     -no-spec = it means that spec files won't be created
 
@@ -36,4 +37,23 @@ Can take advantage of dependency injection to consume providers with same module
 
 Controller = It has methods inside it, which each of it has decorator such as @GET, @POST...
 
-----------------------Creating a controller
+---------------------------------------------Nest Providers and Services
+-----Providers
+Can be injected into contructors if decorated as an @Injectable, via dependency injection
+Can be a plain value, class, sync/async factory...
+It must be provided to a module for them to be usable
+Can be exported from a module and then be available to others modules that imported it
+
+-----Services
+Defined as providers, but NO all providers are services
+Singleton when wrapped with @Injection and provided to a module. That means, the same instance
+will be shared across the application - acting as a single source of truth
+The main source of business logic. 
+Here you can add the business logic related to the tasks, something create, update, delete...
+
+---------------------Dependency Injection in NestJs
+Any component within the NestJs ecosystem can inject a provider that is decorated with the @Injectable
+We define the dependency in the constructor for the class. NestJs will take care of the injection for
+us, and it will then be available as a Class property.
+
+
