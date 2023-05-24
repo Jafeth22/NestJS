@@ -56,4 +56,9 @@ Any component within the NestJs ecosystem can inject a provider that is decorate
 We define the dependency in the constructor for the class. NestJs will take care of the injection for
 us, and it will then be available as a Class property.
 
-
+---------------------------------------------Data Transfer Object (DTO)
+It is used to encapsulate data, and sent it from one subsystem of an app to another
+DTO is not a model definition. It defines the shape of data for a specific case, for example - creating a task
+It can be defined using an interface or class
+Define it in a class is better than an interface, due to class can be preserved post-compilation, also,
+classes allow us to do more and NestJs can refer during run time, but not for interfaces
