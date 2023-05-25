@@ -62,3 +62,14 @@ DTO is not a model definition. It defines the shape of data for a specific case,
 It can be defined using an interface or class
 Define it in a class is better than an interface, due to class can be preserved post-compilation, also,
 classes allow us to do more and NestJs can refer during run time, but not for interfaces
+
+---------------------------------------------Nest Pipes
+It operates in the arguments to be processed by the route handler, just before the handler is called
+Can perform data transformation or validation
+Can return data - either original or modified - which will be passed on the route handler
+Can throw exeptions and also, it can be asynchronous
+
+These are classes with @Injectable decorator
+
+Image: Pipes-diagram
+
