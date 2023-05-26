@@ -88,3 +88,15 @@ docker container start/stop/rm containerName/Id
 *List container started
 docker ls
 
+---------------------------------------------Object Relacional Mapping (ORM)
+ORM is a technique that lets you query and manipulate data from database,
+using and object-oriented paradigm
+
+Pros
+-Data model in one place - easier to maintain. Less repetition
+-Lots of things done automatically - dabase handling, data types, relations...
+-No need to write SQL syntax (easy to learn, hard to master). Using your natural way of coding
+-DB abstraction - you can change the db type whenever you wish
+-Leveares OOP, therefore things like inheritance are easy to achieve
+
+TypeORM = It is a ORM that can run in NodeJs and be used with JS/TS
