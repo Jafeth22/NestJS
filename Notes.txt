@@ -73,3 +73,18 @@ These are classes with @Injectable decorator
 
 Image: Pipes-diagram
 
+-------------------------------------------Docker
+*Create a container
+docker run --name postgress-nest -p 5432:5432 -e POSTGRESS_PASSWORD=postgress -d postgres
+    *--name = container name
+    *-p = port
+    *-e = Will set a environment variable, this case is POSTGRESS_PASSWORD, and the value postgress
+    *-d = Detached mode, it means if the terminal window is closed, it is going to keep running
+    *postgres = Container name that is stored in the cloud
+
+*Start/stop/remove a container
+docker container start/stop/rm containerName/Id
+
+*List container started
+docker ls
+
