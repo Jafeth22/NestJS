@@ -12,26 +12,11 @@ export class TasksService {
     @InjectRepository(TaskReposity)
     private taskReposity: TaskReposity,
   ) {}
-  // private tasks: ITask[] = [];
-  // getAllTasks(): ITask[] {
-  //   return this.tasks;
-  // }
-  // getTasksWithFilters(filterDto: GetTaskFilerDto): ITask[] {
-  //   const { search, status } = filterDto;
-  //   let tasks = this.getAllTasks();
-  //   if (status) {
-  //     tasks = tasks.filter((task) => task.status === status);
-  //   }
-  //   if (search) {
-  //     tasks = tasks.filter((task) => {
-  //       if (task.title.includes(search) || task.description.includes(search)) {
-  //         return true;
-  //       }
-  //       return false;
-  //     });
-  //   }
-  //   return tasks;
-  // }
+
+  getAllTasks(filterDto: GetTaskFilerDto): Promise<Task[]> {
+    return this.taskReposity.getAllTasks(filterDto);
+  }
+
   async getTaskById(id: string): Promise<Task> {
     const found = await this.taskReposity.findOne(id);
 
@@ -41,13 +26,7 @@ export class TasksService {
 
     return found;
   }
-  // getTaskById(id: string): ITask {
-  //   const foundedTask = this.tasks.find((task) => task.id === id);
-  //   if (!foundedTask) {
-  //     throw new NotFoundException(`Task with ID -${id}- not found`);
-  //   }
-  //   return foundedTask;
-  // }
+
   createTask(createTaskDto: CreateTaskDto): Promise<Task> {
     return this.taskReposity.createTask(createTaskDto);
   }
@@ -60,9 +39,12 @@ export class TasksService {
     }
   }
 
-  // updateTask(id: string, status: TaskStatus): ITask {
-  //   const task = this.getTaskById(id);
-  //   task.status = status;
-  //   return task;
-  // }
+  async updateTask(id: string, status: TaskStatus): Promise<Task> {
+    const task = await this.getTaskById(id);
+    task.status = status;
+
+    await this.taskReposity.save(task);
+
+    return task;
+  }
 }

@@ -22,14 +22,10 @@ export class TasksController {
    */
   constructor(private tasksService: TasksService) {}
 
-  // @Get()
-  // getTasks(@Query() filterDto: GetTaskFilerDto): ITask[] {
-  //   if (Object.keys(filterDto).length) {
-  //     return this.tasksService.getTasksWithFilters(filterDto);
-  //   } else {
-  //     return this.tasksService.getAllTasks();
-  //   }
-  // }
+  @Get()
+  getTasks(@Query() filterDto: GetTaskFilerDto): Promise<Task[]> {
+    return this.tasksService.getAllTasks(filterDto);
+  }
 
   /**
    * When use the : it means that it will part of the path (it is a path param),
@@ -50,12 +46,12 @@ export class TasksController {
     return this.tasksService.deleteTask(id);
   }
 
-  // @Patch(':id/status')
-  // updateTask(
-  //   @Param('id') id: string,
-  //   @Body() updateTaskStatus: UpdateTaskStatusDto,
-  // ): ITask {
-  //   const { status } = updateTaskStatus;
-  //   return this.tasksService.updateTask(id, status);
-  // }
+  @Patch(':id/status')
+  updateTask(
+    @Param('id') id: string,
+    @Body() updateTaskStatus: UpdateTaskStatusDto,
+  ): Promise<Task> {
+    const { status } = updateTaskStatus;
+    return this.tasksService.updateTask(id, status);
+  }
 }
