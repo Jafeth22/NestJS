@@ -7,7 +7,6 @@ import { GetTaskFilerDto } from './dto/get-task-filter-dto';
 @EntityRepository(Task)
 export class TaskReposity extends Repository<Task> {
   async getAllTasks(filterDto: GetTaskFilerDto): Promise<Task[]> {
-    console.log(['EntityRepository', filterDto]);
     const { status, search } = filterDto;
     // createQueryBuilder = it is going to create a query builder,
     // in this case, it is with the entity "task"

@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TasksModule } from './tasks/tasks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       // It always keep the db schema sync with the help of TypeORM
       synchronize: true,
     }),
+    AuthModule,
   ],
-  // providers: [TasksService],
 })
 export class AppModule {}
