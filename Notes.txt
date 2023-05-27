@@ -86,7 +86,7 @@ docker run --name postgress-nest -p 5432:5432 -e POSTGRESS_PASSWORD=postgress -d
 docker container start/stop/rm containerName/Id
 
 *List container started
-docker ls
+docker container ls
 
 ---------------------------------------------Object Relacional Mapping (ORM)
 ORM is a technique that lets you query and manipulate data from database,

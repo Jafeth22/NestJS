@@ -12,6 +12,7 @@ import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { GetTaskFilerDto } from './dto/get-task-filter-dto';
 import { UpdateTaskStatusDto } from './dto/update-task-status.dto';
+import { Task } from './task.entity';
 
 @Controller('tasks')
 export class TasksController {
@@ -30,24 +31,24 @@ export class TasksController {
   //   }
   // }
 
-  // /**
-  //  * When use the : it means that it will part of the path (it is a path param),
-  //  * so, it is a value that we can extract
-  //  */
-  // @Get('/:id')
-  // getTaskById(@Param('id') id: string): ITask {
-  //   return this.tasksService.getTaskById(id);
-  // }
+  /**
+   * When use the : it means that it will part of the path (it is a path param),
+   * so, it is a value that we can extract
+   */
+  @Get('/:id')
+  getTaskById(@Param('id') id: string): Promise<Task> {
+    return this.tasksService.getTaskById(id);
+  }
 
-  // @Post()
-  // createTask(@Body() createTaskDto: CreateTaskDto): ITask {
-  //   return this.tasksService.createTask(createTaskDto);
-  // }
+  @Post()
+  createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+    return this.tasksService.createTask(createTaskDto);
+  }
 
-  // @Delete('/:id')
-  // deleteTask(@Param('id') id: string): void {
-  //   return this.tasksService.deleteTask(id);
-  // }
+  @Delete('/:id')
+  deleteTask(@Param('id') id: string): Promise<void> {
+    return this.tasksService.deleteTask(id);
+  }
 
   // @Patch(':id/status')
   // updateTask(
