@@ -112,3 +112,24 @@ Pros
 -Leveares OOP, therefore things like inheritance are easy to achieve
 
 TypeORM = It is a ORM that can run in NodeJs and be used with JS/TS
+
+---------------------------------------------Json Web Token (JWT)
+For authorization or secure of exchange of information between parties
+Verify that the sender is who claims to be
+Signed by the issuer, using a secret or keypair (some algorithm)
+JWT can be decoded by anyone, they should not contain sensitive information sush as passwords
+It is useful for FE, bacause it could be used to toggle features conditionally. 
+It should be short live
+
+Once we add the packages related to JWT, add the following on module file
+imports: [
+    ...,
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.register({
+        secret: 'someSecretHere',
+        signOptions: {
+        expiresIn: 3600, // 
+        },
+    }),
+    ...,
+]
