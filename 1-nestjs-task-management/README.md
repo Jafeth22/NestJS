@@ -44,4 +44,7 @@ passport
 
 # To work both libraries together
 passport-jwt
+
+# Integrate passport with jwt, that make the integration much easier
+@types/passport-jwt
 ```
