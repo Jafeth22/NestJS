@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  Logger,
   Param,
   Patch,
   Post,
@@ -21,6 +22,7 @@ import { User } from 'src/auth/user.entity';
 @Controller('tasks')
 @UseGuards(AuthGuard()) // This is going to protect the entire controller
 export class TasksController {
+  private logger = new Logger('TasksController');
   /**
    * if we add private/public before the name, typeScript will take it
    * as property/variable for this controller
@@ -32,6 +34,11 @@ export class TasksController {
     @Query() filterDto: GetTaskFilerDto,
     @GetUser() user: User,
   ): Promise<Task[]> {
+    this.logger.verbose(
+      `User: "${user.username}" retrieving all tasks. Filters: ${JSON.stringify(
+        filterDto,
+      )}`,
+    );
     return this.tasksService.getAllTasks(filterDto, user);
   }
 

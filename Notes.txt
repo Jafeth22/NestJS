@@ -133,3 +133,9 @@ imports: [
     }),
     ...,
 ]
+
+-------------------------------------------------Loggers
+Some good loggers libraries are:
+    -Bunyon
+    -Winston
+    -Bino
