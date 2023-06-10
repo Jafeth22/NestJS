@@ -1,7 +1,7 @@
 ## Installation
 
 ```bash
-$ yarn install
+yarn install
 ```
 
 ## Running the app
@@ -53,4 +53,10 @@ cross-env
 
 # To create a config module
 @nestjs/config
+
+# Help to valide the schema of DB
+@hapi/joi
+
+# Help to valide the schema of DB
+@types/hapi__joi
 ```

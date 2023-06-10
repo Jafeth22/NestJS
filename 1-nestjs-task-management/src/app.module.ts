@@ -3,6 +3,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { configValidationSchema } from './config.schema';
 
 @Module({
   imports: [
@@ -10,6 +11,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     ConfigModule.forRoot({
       // Here we are using envFiles per environment, the order will import
       envFilePath: [`.env.stage.${process.env.STAGE}`],
+      // To validate the schema
+      validationSchema: configValidationSchema,
     }),
     TasksModule,
     // It uses Async because the values are not immediately when app starts, so,
