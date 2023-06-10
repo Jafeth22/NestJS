@@ -134,8 +134,29 @@ imports: [
     ...,
 ]
 
--------------------------------------------------Loggers
+---------------------------------------------Loggers
 Some good loggers libraries are:
     -Bunyon
     -Winston
     -Bino
+
+---------------------------------------------Configuration
+Define values that are loaded upon starting the app (should not be changed during runtime)
+Configuration per environment such as: dev, stage, production...
+It can be define in many ways (JSON, YAML, XML, env variables...) using custom solutions or
+open-source libraries.
+
+---------------------------------------------Environment variables
+We can define it before start the app, example
+With one variable
+    VARIBALENAME=someValue yarn start:dev
+Two or more
+    VARIBALENAME=someValue VARIBALENAME=someValue yarn start:dev
+
+In case we need to override the value that is located inside the env file, we just override the variable before
+the command to start the app
+
+For Windows OS, to set a variable, do some of the following 2 options
+    -"start:dev": "SET STAGE=dev && nest start --watch",
+    or
+    -"start:dev": "cross-env STAGE=dev nest start --watch", // For this, the @nestjs/config pack should be installed

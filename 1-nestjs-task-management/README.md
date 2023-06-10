@@ -47,4 +47,10 @@ passport-jwt
 
 # Integrate passport with jwt, that make the integration much easier
 @types/passport-jwt
+
+# Use global environments (Apply only for windows OS)
+cross-env
+
+# To create a config module
+@nestjs/config
 ```
