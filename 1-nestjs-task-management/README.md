@@ -1,3 +1,9 @@
+## Node version
+
+```bash
+Node v18.10.0
+```
+
 ## Installation
 
 ```bash
