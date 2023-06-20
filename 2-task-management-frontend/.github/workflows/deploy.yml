@@ -1,10 +1,12 @@
 name: Deploy
 
+# Manual deployment
 on: [workflow_dispatch]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Steps of the code, name and task
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
@@ -17,6 +19,7 @@ jobs:
 
       - name: Build React App
         run: yarn build
+        # Envirnment variables
         env:
           HTTPS: 'true'
           REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}

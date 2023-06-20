@@ -15,10 +15,12 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   // This is to import automatically the interceptors
   app.useGlobalInterceptors(new TransformInterceptor());
-  const port = 3000;
+  const port = process.env.PORT;
   await app.listen(port);
   const logger = new Logger();
   // This will appear on the console when the app it is running
-  logger.log(`Application listening on port ${port}`);
+  logger.log(
+    `Application listening on port ${port} env [${process.env.STAGE}]`,
+  );
 }
 bootstrap();
