@@ -1,0 +1,19 @@
+# Write your query or mutation here
+query {
+  lesson {
+    name
+    startDate
+  }
+}
+
+--------------------------------------------------------------------------------
+# Write your query or mutation here
+mutation{
+  createLesson(
+    name: "test class name",
+    startDate: "2023-06-29T18:00:00Z",
+    endDate: "2023-06-30T18:00:00Z",
+  ){
+    name
+  }
+}
