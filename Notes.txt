@@ -1,5 +1,9 @@
-- Command to create a new folder
+---------------------------------------------New Nestjs Project
+-Command to create a new folder
     nest new projectName
+
+-Case the command NEST is not recognized, install CLI
+    npm i -g @nestjs/cli
 
 ---------------------------------------------Files
 -.prettierrc = Give format to the code consistently
@@ -160,3 +164,20 @@ For Windows OS, to set a variable, do some of the following 2 options
     -"start:dev": "SET STAGE=dev && nest start --watch",
     or
     -"start:dev": "cross-env STAGE=dev nest start --watch", // For this, the @nestjs/config pack should be installed
+
+---------------------------------------------Resolver
+An Resolver is similar to an Controller, this is (Resolver) in the GraphQL side
+
+---------------------------------------------Mongo DB Connection
+Go to follow URL to create a connection to the DB
+https://www.udemy.com/course/nestjs-zero-to-hero/learn/lecture/18675618#content
+
+---------------------------------------------Query in a No relational (mongodb) DB
+This a query of lesson entity (resolver)
+query {
+  lesson {
+    # This area fields that will be shown
+    name
+    startDate
+  }
+}
