@@ -1,6 +1,7 @@
 # Write your query or mutation here
 query {
-  lesson {
+  lesson() {
+    # This section is the columns that will be shown when the query is successfully
     name
     startDate
   }
