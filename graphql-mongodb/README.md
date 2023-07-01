@@ -91,4 +91,9 @@ mongodb
 
 # Use typescript with mongodb
 @types/mongodb
+
+# It has a bounch of decorator to use in the classes and validate against the rules we create
+class-validator
+
+class-transformer
 ```

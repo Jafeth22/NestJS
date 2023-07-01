@@ -9,6 +9,7 @@ query {
 
 --------------------------------------------------------------------------------
 # Write your query or mutation here
+# This is when the params are individual
 mutation{
   createLesson(
     name: "test class name",
@@ -16,5 +17,21 @@ mutation{
     endDate: "2023-06-30T18:00:00Z",
   ){
     name
+  }
+}
+
+# This is when use an objecto as param
+mutation{
+  createLesson(
+    createLessonInput: {
+      name: "test class name",
+      startDate: "2023-06-29T18:00:00Z",
+      endDate: "2023-06-30T18:00:00Z",
+    }
+  ){
+    id
+    name
+    startDate
+    endDate
   }
 }
