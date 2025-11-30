@@ -7,7 +7,7 @@ import configuration from './config/configuration';
   imports: [
     TicketsModule,
     ConfigModule.forRoot({
-      envFilePath: '.env', // take that file from the root directory
+      envFilePath: ['.env.shared', `.env.${process.env.NODE_ENV}`], // take that file from the root directory
       load: [configuration], // load the configuration function
       isGlobal: true, // to be able to use it in other modules, without importing again
     }),
