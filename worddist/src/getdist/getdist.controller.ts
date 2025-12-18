@@ -6,6 +6,11 @@ import { AlgoService } from 'src/algo/algo.service';
 export class GetdistController {
   constructor(private readonly algoService: AlgoService) {}
 
+  /**
+   * @param A [string]
+   * @param B [string]
+   * @returns [Distance]
+   */
   @Get(':A/:B')
   getDist(@Param('A') A: string, @Param('B') B: string): Distance {
     return {
