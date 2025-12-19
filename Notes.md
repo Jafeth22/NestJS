@@ -31,7 +31,7 @@ Nest to organized the app structure
 - Exports: Array of providers to export modules
 - Imports: List of modules required by the current module
 
-## Creating a module or controller
+## Creating a module, controller or service
 
 - nest [g] [module/controller/service] [name] [--no-spec]
   - g = generate
@@ -60,7 +60,7 @@ Nest to organized the app structure
 
 ## Nest Controllers
 
-Responsible for handling incoming requests and returning responses to the client
+Responsible for handling incoming HTTP requests and returning responses to the client
 Bound to a specific path
 Containing handlers, which handle endpoints and request methods (`get`, `post`, `put` `delete`)
 Can take advantage of dependency injection to consume providers with same module
