@@ -11,6 +11,7 @@ import {
   ParseIntPipe,
 } from '@nestjs/common';
 import { SpeakersService } from './speakers.service';
+import { CreateSpeakerDto } from './dto/create-speaker.dto';
 
 @Controller('speakers')
 export class SpeakersController {
@@ -33,8 +34,8 @@ export class SpeakersController {
   }
 
   @Post()
-  create(@Body() speaker: { name: string; expertise: string }) {
-    return this.speakersService.create(speaker);
+  create(@Body() createSpeakerDto: CreateSpeakerDto) {
+    return this.speakersService.create(createSpeakerDto);
   }
 
   @Put(':id')
