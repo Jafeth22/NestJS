@@ -19,6 +19,9 @@ export class AppModule implements NestModule {
     // Here, LoggerMiddleware is applied to all routes using forRoutes('*')
     consumer
       .apply(LoggerMiddleware) // apply method is used to specify which middleware to use, it allows multiple middleware to be applied
+      // .exclude() // exclude method is used to specify routes that should be excluded from the middleware
       .forRoutes('*'); // forRoutes method is used to specify the routes the middleware should apply to
+    // also, specific routes can be defined like { path: 'cats', method: RequestMethod.GET
+    // also, pass controllers instead of paths, or, mix both
   }
 }
