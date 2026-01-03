@@ -35,3 +35,6 @@ Functionalities needed across the app like:
     - Add metadata (custom header, timestamps)
   - Handle errors
     - Transform and/or exceptions
+
+It can be bind to controller or specific routes or globally (using the main.js file), to affect all request across the app
+For this, we just need to add the attribute to the controller like `@UseInterceptors(LoggerInterceptor)`

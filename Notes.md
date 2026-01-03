@@ -33,9 +33,8 @@ Nest to organized the app structure
 
 ## Creating a module, controller or service
 
-- nest [g] [module/controller/service/resource/middleware] [name] [--no-spec]
+- nest [g] [module/controller/service/resource/middleware/interceptors] [name] [--no-spec]
   - g = generate
-  - s = service
   - option = Could be replace by another option, see more option typing `nest g --help`
   - module/mo = it will generate a new folder (case it does not exist) an update app.module
   - controller = controller file and update module file
