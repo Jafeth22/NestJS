@@ -38,3 +38,11 @@ Functionalities needed across the app like:
 
 It can be bind to controller or specific routes or globally (using the main.js file), to affect all request across the app
 For this, we just need to add the attribute to the controller like `@UseInterceptors(LoggerInterceptor)`
+
+## Error handling and testing
+
+### Error
+
+**Exception Layer**: It catches all unhandled errors and exceptions in the app
+
+### Testing
