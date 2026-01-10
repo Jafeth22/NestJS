@@ -21,11 +21,12 @@ export class FilmsController {
   constructor(private readonly filmsService: FilmsService) {}
 
   @Post()
+  // UsePipes = applies validation rules to the incoming request data
   @UsePipes(
     new ValidationPipe({
-      transform: true,
-      whitelist: true,
-      forbidNonWhitelisted: true,
+      transform: true, // Converts payloads (likes JSONs) to DTO instances
+      whitelist: true, // Removes properties that do not have any decorators in the DTO
+      forbidNonWhitelisted: true, // Throws an error if non-whitelisted properties are present
     }),
   )
   create(@Body() createFilmDto: CreateFilmDto) {

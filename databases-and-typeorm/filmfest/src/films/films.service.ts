@@ -11,8 +11,8 @@ import { CreateVenueDto } from './dto/create-venue.dto';
 @Injectable()
 export class FilmsService {
   constructor(
-    @InjectRepository(Film)
-    private readonly filmRepository: Repository<Film>,
+    @InjectRepository(Film) // Injecting the Film repository
+    private readonly filmRepository: Repository<Film>, // Repository for Film entity
     @InjectRepository(Venue)
     private readonly venueRepository: Repository<Venue>,
     private readonly dataSource: DataSource,
