@@ -1,7 +1,6 @@
 import { Datestamps } from 'src/common/entities/datestamps';
 import {
   Column,
-  CreateDateColumn,
   Entity,
   JoinColumn,
   JoinTable,
@@ -9,7 +8,6 @@ import {
   OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
 } from 'typeorm';
 import { Detail } from './detail.entity';
 import { Review } from './review.entity';
@@ -26,8 +24,9 @@ export class Film {
   @Column(() => Datestamps, { prefix: false })
   datestamps: Datestamps;
 
+  // cascade: true will automatically save related entities
   @OneToOne(() => Detail, { cascade: true })
-  @JoinColumn()
+  @JoinColumn() // specifies that this side owns the relationship, this will add a detailId column to the Film table
   detail: Detail;
 
   @OneToMany(() => Review, (review) => review.film, { cascade: true })
