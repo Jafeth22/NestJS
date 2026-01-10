@@ -39,7 +39,7 @@ Nest to organized the app structure
   - module/mo = it will generate a new folder (case it does not exist) an update app.module
   - controller = controller file and update module file
   - service/s = New service file and update module file
-  - resource = new resource (it creates all the files, controller, modules...)
+  - resource/res = new resource (it creates all the files, controller, modules...)
   - middleware = to create a middleware
   - name = name of the option, for this case, it is the module name
   - no-spec = it means that spec (tests) files won't be created
