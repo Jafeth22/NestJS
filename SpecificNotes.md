@@ -45,4 +45,10 @@ For this, we just need to add the attribute to the controller like `@UseIntercep
 
 **Exception Layer**: It catches all unhandled errors and exceptions in the app
 
-### Testing
+## Security
+
+- CSRF (Cross-Site Request Forgery): An attack that tricks an authenticated user into making unwanted actions on a web app where they are logged in
+
+### Packages
+
+- `@nest/throttler`: Keep track of the incoming requests quantities, to prevent DDoS attacks

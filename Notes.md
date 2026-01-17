@@ -33,7 +33,7 @@ Nest to organized the app structure
 
 ## Creating a module, controller or service
 
-- nest [g] [module/controller/service/resource/middleware/interceptors] [name] [--no-spec]
+- nest [g] [module/controller/service/resource/middleware/interceptors/guard] [name] [--no-spec]
   - g = generate
   - option = Could be replace by another option, see more option typing `nest g --help`
   - module/mo = it will generate a new folder (case it does not exist) an update app.module
@@ -41,6 +41,8 @@ Nest to organized the app structure
   - service/s = New service file and update module file
   - resource/res = new resource (it creates all the files, controller, modules...)
   - middleware = to create a middleware
+  - interceptors = to create an interceptor
+  - guard = to create a guard, used for authorization, it determines if a user can access a route or not
   - name = name of the option, for this case, it is the module name
   - no-spec = it means that spec (tests) files won't be created
 
