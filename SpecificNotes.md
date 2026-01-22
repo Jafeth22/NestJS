@@ -49,6 +49,15 @@ For this, we just need to add the attribute to the controller like `@UseIntercep
 
 - CSRF (Cross-Site Request Forgery): An attack that tricks an authenticated user into making unwanted actions on a web app where they are logged in
 
+## Deployments
+
+Ways to implement CI/CD pipelines:
+- IaaS (Infrastructure as a Service): it only provides the infrastructure; provision and manage virtual machines and other resources on cloud providers like AWS, Azure, GCP, it only requires managing the OS, runtime, and application
+- PaaS (Platform as a Service): Use platforms like Heroku, AWS Elastic Beanstalk, Google App Engine to deploy applications without managing the underlying infrastructure
+- Containerization: Use Docker to containerize the application and deploy it using orchestration tools like Kubernetes
+- Serverless: Deploy functions using serverless platforms like AWS Lambda, Azure Functions, Google Cloud Functions
+- VPS (Virtual Private Server): Use services like DigitalOcean, Linode to deploy and manage applications on virtual servers
+
 ### Packages
 
 - `@nest/throttler`: Keep track of the incoming requests quantities, to prevent DDoS attacks

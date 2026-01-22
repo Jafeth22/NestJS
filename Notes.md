@@ -78,6 +78,7 @@ Can be injected into constructors if decorated as an `@Injectable`, via dependen
 Can be a plain value, class, sync/async factory...
 It must be provided to a module for them to be usable
 Can be exported from a module and then be available to others modules that imported it
+Business logic should be implemented in providers and services
 
 ### Services
 
